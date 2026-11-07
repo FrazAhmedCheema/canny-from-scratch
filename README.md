@@ -64,5 +64,3 @@ Read exact pixel metrics and radius-1 metrics together. The latter use **maximum
 | `evaluation.py` | Threshold sweeps, repeated stage/total timing, machine-readable reports |
 | `reference.py` | Optional SciPy comparison, separate from the core |
 | `visualization.py`, `cli.py` | Saved figures and command-line interface |
-
-See [TECHNICAL.md](docs/TECHNICAL.md) for mathematics, boundary/tie conventions, complexity, and limitations, and [INTERVIEW.md](docs/INTERVIEW.md) for study questions with answers.
