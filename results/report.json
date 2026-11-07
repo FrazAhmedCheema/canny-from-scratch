@@ -1,0 +1,184 @@
+{
+  "seed": 1729,
+  "size": 128,
+  "settings": {
+    "sensitive": {
+      "sigma": 1.2,
+      "kernel_size": 7,
+      "low": 0.02,
+      "high": 0.05,
+      "threshold_mode": "absolute",
+      "boundary": "reflect",
+      "connectivity": 8
+    },
+    "balanced": {
+      "sigma": 1.2,
+      "kernel_size": 7,
+      "low": 0.04,
+      "high": 0.1,
+      "threshold_mode": "absolute",
+      "boundary": "reflect",
+      "connectivity": 8
+    },
+    "strict": {
+      "sigma": 1.2,
+      "kernel_size": 7,
+      "low": 0.08,
+      "high": 0.2,
+      "threshold_mode": "absolute",
+      "boundary": "reflect",
+      "connectivity": 8
+    }
+  },
+  "evaluation_border": 5,
+  "matching": "exact and radius-1 one-to-one maximum-cardinality",
+  "versions": {
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2",
+    "Pillow": "13.0.0"
+  },
+  "python": "3.12.14",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "benchmark": [
+    {
+      "scene": "vertical_step",
+      "shape": [
+        128,
+        128
+      ],
+      "repeats": 5,
+      "total_median_ms": 3.951867000068887,
+      "total_min_ms": 3.6709120004161377,
+      "total_max_ms": 5.1571370004239725,
+      "stage_median_ms": {
+        "grayscale": 0.032328999623132404,
+        "gaussian": 1.019338999867614,
+        "sobel": 0.7000570003583562,
+        "magnitude_orientation": 0.1518300005045603,
+        "non_maximum_suppression": 1.326683000115736,
+        "double_threshold": 0.05269899975246517,
+        "hysteresis": 0.5482280002979678
+      }
+    },
+    {
+      "scene": "rectangle_rgb",
+      "shape": [
+        128,
+        128,
+        3
+      ],
+      "repeats": 5,
+      "total_median_ms": 4.269195000233594,
+      "total_min_ms": 4.170666999925743,
+      "total_max_ms": 4.696791000242229,
+      "stage_median_ms": {
+        "grayscale": 0.10671099971659714,
+        "gaussian": 1.029334000122617,
+        "sobel": 0.7305130002350779,
+        "magnitude_orientation": 0.16132399923662888,
+        "non_maximum_suppression": 1.2348239997663768,
+        "double_threshold": 0.047000999984447844,
+        "hysteresis": 0.9526180001557805
+      }
+    },
+    {
+      "scene": "disk",
+      "shape": [
+        128,
+        128
+      ],
+      "repeats": 5,
+      "total_median_ms": 4.04943400008051,
+      "total_min_ms": 3.9999489999900106,
+      "total_max_ms": 4.399903999910748,
+      "stage_median_ms": {
+        "grayscale": 0.034392000088701025,
+        "gaussian": 1.0013820001404383,
+        "sobel": 0.686575999679917,
+        "magnitude_orientation": 0.16582999978709267,
+        "non_maximum_suppression": 1.2252699998498429,
+        "double_threshold": 0.048363000132667366,
+        "hysteresis": 0.8552119998057606
+      }
+    },
+    {
+      "scene": "diagonal",
+      "shape": [
+        128,
+        128
+      ],
+      "repeats": 5,
+      "total_median_ms": 4.628218000107154,
+      "total_min_ms": 4.132449000280758,
+      "total_max_ms": 4.968000000189932,
+      "stage_median_ms": {
+        "grayscale": 0.03369999922142597,
+        "gaussian": 1.0347620000175084,
+        "sobel": 0.758385000153794,
+        "magnitude_orientation": 0.1638670000829734,
+        "non_maximum_suppression": 1.256557000488101,
+        "double_threshold": 0.047282000195991714,
+        "hysteresis": 1.0185880000790348
+      }
+    },
+    {
+      "scene": "noisy_rectangle",
+      "shape": [
+        128,
+        128
+      ],
+      "repeats": 5,
+      "total_median_ms": 5.073039000308199,
+      "total_min_ms": 4.806836999705411,
+      "total_max_ms": 5.518402000234346,
+      "stage_median_ms": {
+        "grayscale": 0.039059000300767366,
+        "gaussian": 1.0885239998970064,
+        "sobel": 0.7919660001789453,
+        "magnitude_orientation": 0.3139240006930777,
+        "non_maximum_suppression": 1.5951279992805212,
+        "double_threshold": 0.05250899994280189,
+        "hysteresis": 1.0440060004839324
+      }
+    },
+    {
+      "scene": "mixed_contrast",
+      "shape": [
+        128,
+        128
+      ],
+      "repeats": 5,
+      "total_median_ms": 6.385290999787685,
+      "total_min_ms": 6.328794999717502,
+      "total_max_ms": 6.7313930003365385,
+      "stage_median_ms": {
+        "grayscale": 0.0460600003862055,
+        "gaussian": 1.5204159999484546,
+        "sobel": 1.1563659991224995,
+        "magnitude_orientation": 0.41120999958366156,
+        "non_maximum_suppression": 2.0494740001595346,
+        "double_threshold": 0.07336099952226505,
+        "hysteresis": 1.1138210002172855
+      }
+    }
+  ],
+  "reference": {
+    "status": "passed",
+    "scipy_version": "1.17.0",
+    "max_absolute_errors": {
+      "reflect": 3.552713678800501e-15,
+      "edge": 3.552713678800501e-15,
+      "constant": 3.552713678800501e-15,
+      "sampled_gaussian": 4.440892098500626e-16,
+      "sobel_x": 2.220446049250313e-16,
+      "sobel_y": 2.220446049250313e-16
+    },
+    "hysteresis_equal": {
+      "4": true,
+      "8": true
+    },
+    "scope": "Convolution, sampled Gaussian, Sobel, graph reachability; no full Canny equivalence claim"
+  }
+}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edgevision-study"
+version = "1.0.0"
+description = "NumPy Canny-style edge detection and reproducible algorithm evaluation"
+requires-python = ">=3.12"
+dependencies = ["numpy>=1.26,<3", "matplotlib>=3.8,<4", "Pillow>=10,<14"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+reference = ["scipy>=1.11,<2"]
+
+[project.scripts]
+edgevision = "edgevision.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["edgevision*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
